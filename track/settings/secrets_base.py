@@ -1,0 +1,5 @@
+
+SECRET_KEY = '(secret-key)'
+
+MAPS_API_KEY = 'AIzaSyCo6dVMFP0CSOWL_B2wAJFYdBI9f8vm9R0'
+

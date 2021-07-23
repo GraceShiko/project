@@ -1,0 +1,47 @@
+
+{% load common_tags %}
+
+
+<table class="table table-bordered table-condensed table-padding-3 no-margin-bottom table-td-vertical-align-middle table-ajax">
+	<tr><th>ID</th><th>Date collected</th><th>Latitude</th><th>Longitude</th><th>Water level</th><th>Date received</th></tr>
+	{% for m in table_gps_measurements %}
+		<tr>
+			<td>{{table_gps_measurements_ids|get_at_index:m.id}}</td>
+			<td>{{m.date_collected|date:'Y-m-d H:i:s'}}</td>
+			<td>{{m.latitude}}</td>
+			<td>{{m.longitude}}</td>
+			<td>{{m.water_level}}</td>
+			<td>{{m.date_received|date:'Y-m-d H:i:s'}}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+{% include "common/pagination.html" with paginator_page=table_gps_measurements ajax_url="devices:pagination-gps-measurements" extra=extra only %}
+
+<script>
+
+	$(document).ready(function(){
+
+$(".tk").each(function(){
+var amount = $('.lq').attr('data-amount')
+var quantity = amount;
+$(this).find('.lq').animate({'height' : parseInt(amount) + '%'},1000);
+  $('.ring').css({height : 100 - amount + 10 + '%'});
+  $('.text').text(quantity  + '%');
+  });
+  $('.text').each(function(){
+  	var $this = $(this);
+     jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+    duration: 1000,
+    easing: 'swing',
+    step: function () {
+      $this.text(Math.ceil(this.Counter) + "%");
+    }
+  });
+  });
+});
+
+
+
+
+</script>
