@@ -35,6 +35,7 @@ class userclear_credits_View(APIView):
 class stk_push_api(APIView):
     def post(self, request):
         data = (request.data)
+        print(data)
         phone = (data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][4]["Value"])
         amount = (data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][0]["Value"])
         user = User.objects.get(phone_number="+254"+str(phone)[-9:])
