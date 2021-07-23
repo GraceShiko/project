@@ -56,8 +56,8 @@ class Payment(object):
         return (response.json())
 
     def send_sms(self, phone_number, message):
-        username = "watertap"
-        api_key = "f68451185b34fec9b4b2202447d5c2e238c68b0c60dd8c72e49e16ec2266a6ef"
+        username = "GWT"
+        api_key = "27495a4a5093119b09ee6465d4dcbdba2eebb5b7f9760f545ea319b56011374d"
 
         africastalking.initialize(username, api_key)
         sms = africastalking.SMS
