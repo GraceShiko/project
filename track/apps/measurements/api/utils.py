@@ -8,7 +8,7 @@ import time
 
 class Payment(object):
     def __init__(self):
-        self.endpoint = "https://ff08bfa58bd5.ngrok.io"
+        self.endpoint = "https://gwt-water.herokuapp.com"
         self.Consumer_Key = "6Gv6nSOgc5KTbWF7IYUoWQqeHAUWvTh5"
         self.Consumer_Secret = "x8OAeOHvbeM2GUWl"
         self.Lipa_Na_Mpesa_Online_Shortcode = "174379"
